@@ -1,5 +1,5 @@
 {
-    "name": "dynamic/silverstripe-site-tools",
+    "name": "pr3set-llc/silverstripe-site-tools",
     "description": "Tools to build common functionality in SilverStripe sites.",
     "license": "BSD-3-Clause",
     "type": "silverstripe-vendormodule",
@@ -15,11 +15,19 @@
         }
     ],
     "require": {
+        "php": "^8.1",
+        "silverstripe/framework": "^5",
+        "silverstripe/cms": "^5",
         "silvershop/silverstripe-hasonefield": "^4.0",
         "silverstripe/linkfield": "^4.0",
-        "silverstripe/recipe-cms": "^5",
         "symbiote/silverstripe-gridfieldextensions": "^4",
         "unclecheese/display-logic": "^3.0"
+    },
+    "conflict": {
+        "silverstripe/framework": "<5 || >=6"
+    },
+    "replace": {
+        "dynamic/silverstripe-site-tools": "*"
     },
     "require-dev": {
         "dnadesign/silverstripe-elemental": "^5",
@@ -43,7 +51,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "4.x-dev"
+            "dev-5.x": "5.x-dev"
         }
     }
 }
