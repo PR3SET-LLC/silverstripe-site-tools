@@ -15,23 +15,23 @@
         }
     ],
     "require": {
-        "php": "^8.1",
-        "silverstripe/framework": "^5",
-        "silverstripe/cms": "^5",
-        "silvershop/silverstripe-hasonefield": "^4.0",
-        "silverstripe/linkfield": "^4.0",
-        "symbiote/silverstripe-gridfieldextensions": "^4",
-        "unclecheese/display-logic": "^3.0"
+        "php": "^8.3",
+        "silverstripe/framework": "^6",
+        "silverstripe/cms": "^6",
+        "silverstripe/linkfield": "^5",
+        "silvershop/silverstripe-hasonefield": "^5",
+        "symbiote/silverstripe-gridfieldextensions": "^5",
+        "unclecheese/display-logic": "^4"
     },
     "conflict": {
-        "silverstripe/framework": "<5 || >=6"
+        "silverstripe/framework": "<6 || >=7"
     },
     "replace": {
         "dynamic/silverstripe-site-tools": "*"
     },
     "require-dev": {
-        "dnadesign/silverstripe-elemental": "^5",
-        "silverstripe/recipe-testing": "^3.0"
+        "dnadesign/silverstripe-elemental": "^6",
+        "silverstripe/recipe-testing": "^4"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
@@ -51,7 +51,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-5.x": "5.x-dev"
+            "dev-6.x": "6.x-dev"
         }
     }
 }
