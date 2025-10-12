@@ -31,7 +31,8 @@
     },
     "require-dev": {
         "dnadesign/silverstripe-elemental": "^6",
-        "silverstripe/recipe-testing": "^4"
+        "silverstripe/recipe-testing": "^4",
+        "wernerkrauss/silverstripe-rector": "1"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
@@ -52,6 +53,10 @@
     "extra": {
         "branch-alias": {
             "dev-6.x": "6.x-dev"
-        }
+        },
+        "project-files-installed": [
+            "behat.yml",
+            "phpunit.xml.dist"
+        ]
     }
 }

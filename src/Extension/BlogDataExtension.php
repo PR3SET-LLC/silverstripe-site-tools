@@ -2,18 +2,18 @@
 
 namespace Dynamic\SiteTools\Extension;
 
+use SilverStripe\Core\Extension;
+use SilverStripe\Model\List\PaginatedList;
+use SilverStripe\Model\List\ArrayList;
 use SilverStripe\Control\Controller;
 use SilverStripe\Control\Director;
-use SilverStripe\ORM\ArrayList;
-use SilverStripe\ORM\DataExtension;
-use SilverStripe\ORM\PaginatedList;
 
 /**
  * Class \Dynamic\SiteTools\Extension\BlogDataExtension
  *
  * @property BlogDataExtension $owner
  */
-class BlogDataExtension extends DataExtension
+class BlogDataExtension extends Extension
 {
     /**
      * @param $tags

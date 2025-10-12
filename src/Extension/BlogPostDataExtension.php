@@ -2,17 +2,15 @@
 
 namespace Dynamic\SiteTools\Extension;
 
+use SilverStripe\Core\Extension;
 use DNADesign\Elemental\Models\ElementContent;
 use SilverStripe\Blog\Model\BlogPost;
 use SilverStripe\Control\Controller;
 use SilverStripe\Control\Director;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\TextField;
-use SilverStripe\ORM\ArrayList;
-use SilverStripe\ORM\DataExtension;
 use SilverStripe\ORM\DataList;
 use SilverStripe\ORM\FieldType\DBHTMLText;
-use SilverStripe\ORM\PaginatedList;
 
 /**
  * Class BlogPostDataExtension
@@ -20,7 +18,7 @@ use SilverStripe\ORM\PaginatedList;
  * @property BlogPostDataExtension $owner
  * @property string $SubTitle
  */
-class BlogPostDataExtension extends DataExtension
+class BlogPostDataExtension extends Extension
 {
     /**
      * @var array
@@ -41,10 +39,10 @@ class BlogPostDataExtension extends DataExtension
      */
     public function updateCMSFields(FieldList $fields)
     {
-        $fields->removeByName(array(
+        $fields->removeByName([
             'SubTitle',
             'CustomSummary',
-        ));
+        ]);
 
         $fields->insertAfter('Title', TextField::create('SubTitle', 'Sub Title'));
 
@@ -81,15 +79,15 @@ class BlogPostDataExtension extends DataExtension
     public function getRelatedPosts()
     {
         $posts = BlogPost::get()
-            ->filter(array(
+            ->filter([
                 'ParentID' => $this->owner->ParentID,
-            ))
+            ])
             ->exclude('ID', $this->owner->ID);
 
         if ($this->owner->Tags()->count() > 0) {
-            $posts->filterAny(array(
+            $posts->filterAny([
                 'Tags.ID' => $this->owner->Tags()->map('ID', 'ID')->toArray(),
-            ));
+            ]);
         }
 
         return $posts;

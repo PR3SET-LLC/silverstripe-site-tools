@@ -2,6 +2,7 @@
 
 namespace Dynamic\SiteTools\Model;
 
+use Override;
 use SilverStripe\Assets\Image;
 use SilverStripe\ORM\DataObject;
 use SilverStripe\Forms\FieldList;
@@ -84,11 +85,12 @@ class HeaderImage extends DataObject
     private static $table_name = 'HeaderImage';
 
     /**
-     * @return \SilverStripe\Forms\FieldList
+     * @return FieldList
      */
+    #[Override]
     public function getCMSFields()
     {
-        $this->beforeUpdateCMSFields(function (FieldList $fields) {
+        $this->beforeUpdateCMSFields(function (FieldList $fields): void {
             $fields->removeByName([
                 'HeaderLinkID',
                 'Image',
@@ -126,6 +128,7 @@ class HeaderImage extends DataObject
      * @param null $member
      * @return bool
      */
+    #[Override]
     public function canView($member = null)
     {
         if (!$member) {
@@ -144,6 +147,7 @@ class HeaderImage extends DataObject
      * @param array $context
      * @return bool
      */
+    #[Override]
     public function canCreate($member = null, $context = [])
     {
         if (!$member) {
@@ -161,6 +165,7 @@ class HeaderImage extends DataObject
      * @param null $member
      * @return bool
      */
+    #[Override]
     public function canEdit($member = null)
     {
         if (!$member) {
@@ -178,6 +183,7 @@ class HeaderImage extends DataObject
      * @param null $member
      * @return bool
      */
+    #[Override]
     public function canDelete($member = null)
     {
         if (!$member) {

@@ -2,9 +2,9 @@
 
 namespace Dynamic\SiteTools\Extension;
 
+use SilverStripe\Core\Extension;
 use SilverStripe\Forms\CheckboxField;
 use SilverStripe\Forms\FieldList;
-use SilverStripe\ORM\DataExtension;
 
 /**
  * Class ReviewContentDataExtension
@@ -12,7 +12,7 @@ use SilverStripe\ORM\DataExtension;
  * @property SiteConfig|ReviewContentDataExtension $owner
  * @property bool $ReviewContent
  */
-class ReviewContentDataExtension extends DataExtension
+class ReviewContentDataExtension extends Extension
 {
     /**
      * @var array

@@ -22,11 +22,11 @@ class PrevNextExtension extends Extension
     {
         switch ($mode) {
             case "next":
-                $filter = "ParentID = (" . $this->owner->ParentID . ") AND Sort > (" . $this->owner->Sort . ")";
+                $filter = "ParentID = (" . $this->getOwner()->ParentID . ") AND Sort > (" . $this->getOwner()->Sort . ")";
                 $sort = "Sort ASC";
                 break;
             case "prev":
-                $filter = "ParentID = (" . $this->owner->ParentID . ") AND Sort < (" . $this->owner->Sort . ")";
+                $filter = "ParentID = (" . $this->getOwner()->ParentID . ") AND Sort < (" . $this->getOwner()->Sort . ")";
                 $sort = "Sort DESC";
                 break;
             default:

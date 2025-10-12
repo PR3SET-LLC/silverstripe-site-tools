@@ -2,17 +2,10 @@
 
 namespace Dynamic\SiteTools\Extension;
 
-use Dynamic\Base\Page\HomePage;
-use Dynamic\Base\Page\BlockPage;
+use SilverStripe\Core\Extension;
 use SilverStripe\Forms\FieldList;
-use SilverStripe\Forms\FieldGroup;
-use SilverStripe\Forms\HiddenField;
-use SilverStripe\ORM\DataExtension;
-use SilverStripe\Forms\LiteralField;
 use Dynamic\SiteTools\Model\HeaderImage;
-use Dynamic\Base\Page\CampaignLandingPage;
 use SilverShop\HasOneField\HasOneButtonField;
-use SilverStripe\Forms\GridField\GridFieldAddExistingAutocompleter;
 
 /**
  * Class HeaderImageDataExtension.
@@ -21,14 +14,14 @@ use SilverStripe\Forms\GridField\GridFieldAddExistingAutocompleter;
  * @property int $HeaderImageID
  * @method HeaderImage HeaderImage()
  */
-class HeaderImageExtension extends DataExtension
+class HeaderImageExtension extends Extension
 {
     /**
      * @var array
      */
-    private static $has_one = array(
+    private static $has_one = [
         'HeaderImage' => HeaderImage::class,
-    );
+    ];
 
     /**
      * @var string[]

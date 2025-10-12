@@ -2,6 +2,8 @@
 
 namespace Dynamic\SiteTools\Traits;
 
+use Generator;
+
 /**
  * Trait YieldTrait
  * @package Dynamic\SiteTools\Traits
@@ -10,7 +12,7 @@ trait YieldTrait
 {
     /**
      * @param $list
-     * @return \Generator
+     * @return Generator
      */
     public function yieldSingle($list)
     {
@@ -21,7 +23,7 @@ trait YieldTrait
 
     /**
      * @param $list
-     * @return \Generator
+     * @return Generator
      */
     public function yieldKeyVal($list)
     {
