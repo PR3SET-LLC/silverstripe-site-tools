@@ -35,18 +35,16 @@ class HeaderImageExtension extends Extension
      */
     public function updateCMSFields(FieldList $fields)
     {
-        $fields->replace(
-            'HeaderImageID',
-            $header_image = HasOneButtonField::create(
+        // SS6 scaffolds has_one as the relation name; SS4 used the ID column name.
+        $fields->removeByName(['HeaderImage', 'HeaderImageID']);
+
+        $fields->insertBefore(
+            'Content',
+            HasOneButtonField::create(
                 $this->owner,
                 'HeaderImage',
                 ''
             )
-        );
-
-        $fields->insertBefore(
-            'Content',
-            $header_image
         );
     }
 
